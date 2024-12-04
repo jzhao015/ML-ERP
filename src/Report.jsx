@@ -5,7 +5,7 @@ export class Report extends Component{
     render(){
         return(
             <div>
-                Product
+                forecast report
             </div>
         )
     }
