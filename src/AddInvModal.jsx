@@ -15,7 +15,7 @@ export class AddInvModal extends Component{
                 'Content-Type':'application/json'
             },
             body: JSON.stringify({
-                Inventory: event.target.InventoryId.value,
+                InventoryId: event.target.InventoryId.value,
                 ProductId: parseInt(event.target.ProductId.value, 10), 
                 ProductName: event.target.ProductName.value, 
                 QtyInStock: event.target.QtyInStock.value, 

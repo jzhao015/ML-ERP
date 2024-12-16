@@ -1,12 +1,20 @@
 import React, {Component} from "react";
-import {Button,ButtonToolbar} from 'react-bootstrap';
+import {Button,ButtonToolbar, Pagination} from 'react-bootstrap';
 import {AddPoModal} from './AddPoModal';
 import { EditPoModal } from './EditPoModal';
+import Header from './Header';
 
 export class Purchaseorder extends Component{
     constructor(props){
       super(props);
-      this.state = {pos:[], addModalShow:false, editModalShow:false}
+      this.state = {
+        pos:[], 
+        addModalShow:false, 
+        editModalShow:false,
+        currentPage: 1,
+        itemsPerPage: 6,
+        searchQuery: ''
+      }
     }  
 
     refreshList(){
@@ -35,14 +43,46 @@ export class Purchaseorder extends Component{
           })
       }
   }
+  formatCurrency(value) {
+    return new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(value);
+}
+
+    handleSearch = (query) => {
+        this.setState({ searchQuery: query, currentPage: 1 });
+    }
 
     render(){
-      const {pos, poid, doe, pocusid, pocusname, poprodname, pocity, postate, poprice} = this.state;
+      const {pos, poid, doe, pocusid, pocusname, poprodname, pocity, postate, poqty, currentPage, itemsPerPage, searchQuery} = this.state;
       let addModalClose=()=>this.setState({addModalShow:false});
       let editModalClose=()=>this.setState({editModalShow:false});
-        return(
-            <div className=" text-nowrap">
-                <table class="table w-auto">
+
+      const filteredPos = pos.filter(po =>
+        po.ProductName.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        po.SupplierName.toLowerCase().includes(searchQuery.toLowerCase())
+      );
+
+      const indexOfLastItem = currentPage * itemsPerPage;
+      const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+      const currentItems = filteredPos.slice(indexOfFirstItem, indexOfLastItem);
+      const totalPages = Math.ceil(filteredPos.length / itemsPerPage);
+
+      let paginationItems = [];
+      for (let number = 1; number <= totalPages; number++) {
+          paginationItems.push(
+              <Pagination.Item 
+                  key={number}
+                  active={number === currentPage}
+                  onClick={() => this.setState({ currentPage: number })}
+              >
+                  {number}
+              </Pagination.Item>
+          );
+      }
+
+      return(
+          <div className=" text-nowrap">
+              <Header onSearch={this.handleSearch} OpenSidebar={this.props.OpenSidebar} />
+              <table class="table w-auto">
   <thead>
     <tr>
       <th scope="col">Order Id</th>
@@ -52,29 +92,31 @@ export class Purchaseorder extends Component{
       <th scope="col">Product</th>
       <th scope="col">City</th>
       <th scope="col">State</th>
-      <th scope="col">Value</th>
+      <th scope="col">Qty</th>
+      <th scope="col">TotalValue</th>
       <th scope="col">Options</th>
     </tr>
   </thead>
   <tbody>
-    {pos.map(po=>(
+    {currentItems.map(po=>(
     <tr key={po.OrderId}>
       <td>{po.OrderId}</td>
       <td>{po.DateofEntry}</td>
-      <td>{po.CustomerId}</td>
-      <td>{po.CustomerName}</td>
+      <td>{po.SupplierId}</td>
+      <td>{po.SupplierName}</td>
       <td>{po.ProductName}</td>
       <td>{po.cityAddress}</td>
       <td>{po.stateAddress}</td>
-      <td>{po.valuePrice}</td>
+      <td>{po.Qty}</td>
+      <td> {this.formatCurrency(po.ValuePrice)}</td>
       <td>
         <ButtonToolbar className="row">
             <div className="col-12 d-flex justify-content-start" style={{ gap: '5px' }}>
                 <Button className="mr-2" variant="info" 
                                 onClick={()=>this.setState({editModalShow:true,
-                                    poid:po.OrderId, doe:po.DateofEntry, pocusid:po.CustomerId,
-                                    pocusname:po.CustomerName, poprodname:po.ProductName,
-                                    pocity: po.cityAddress, postate:po.stateAddress, poprice:po.valuePrice})}>Edit</Button>
+                                    poid:po.OrderId, doe:po.DateofEntry, pocusid:po.SupplierId,
+                                    pocusname:po.SupplierName, poprodname:po.ProductName,
+                                    pocity: po.cityAddress, postate:po.stateAddress, poqty:po.Qty})}>Edit</Button>
                 <Button  variant='danger' onClick={()=>this.deletePo(po.OrderId)}>
                                     Delete
                                 </Button>
@@ -89,13 +131,26 @@ export class Purchaseorder extends Component{
                                 poprodname = {poprodname}
                                 pocity = {pocity}
                                 postate = {postate}
-                                poprice = {poprice}/>
+                                poqty = {poqty}/>
         </ButtonToolbar>
       </td>
     </tr>))}
    
   </tbody>
 </table>
+<div className="d-flex justify-content-center mt-3">
+  <Pagination>
+      <Pagination.First onClick={() => this.setState({ currentPage: 1 })} />
+      <Pagination.Prev 
+          onClick={() => this.setState({ currentPage: Math.max(1, currentPage - 1) })}
+      />
+      {paginationItems}
+      <Pagination.Next 
+          onClick={() => this.setState({ currentPage: Math.min(totalPages, currentPage + 1) })}
+      />
+      <Pagination.Last onClick={() => this.setState({ currentPage: totalPages })} />
+  </Pagination>
+</div>
 <ButtonToolbar>
             <Button variant="primary"
             onClick={()=>this.setState({addModalShow:true})}>

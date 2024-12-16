@@ -18,12 +18,12 @@ export class EditPoModal extends Component{
             body: JSON.stringify({
                 OrderId: event.target.OrderId.value,
                 DateofEntry: event.target.DateofEntry.value,
-                CustomerId: parseInt(event.target.CustomerId.value, 10), 
-                CustomerName: event.target.CustomerName.value,
+                SupplierId: parseInt(event.target.SupplierId.value, 10), 
+                SupplierName: event.target.SupplierName.value,
                 ProductName: event.target.ProductName.value, 
                 cityAddress: event.target.cityAddress.value, 
                 stateAddress: event.target.stateAddress.value, 
-                valuePrice: event.target.valuePrice.value
+                Qty: event.target.Qty.value
             })
         }).then(res=>res.json())
         .then((result)=>{
@@ -70,19 +70,19 @@ export class EditPoModal extends Component{
                                     placeholder="DateofEntry"/>
                                     </Form.Group>
 
-                                    <Form.Group controlId="CustomerId">
+                                    <Form.Group controlId="SupplierId">
                                         <Form.Label>
                                             Supplier Id 
                                         </Form.Label>
-                                        <Form.Control type="text" name="CustomerId" required 
+                                        <Form.Control type="text" name="SupplierId" required 
                                         defaultValue={this.props.pocusid} placeholder="SupplierId"/>
                                     </Form.Group>
 
-                                    <Form.Group controlId="CustomerName">
+                                    <Form.Group controlId="SupplierName">
                                         <Form.Label>
                                             Supplier Name
                                         </Form.Label>
-                                        <Form.Control type="text" name="CustomerName" required
+                                        <Form.Control type="text" name="SupplierName" required
                                         defaultValue={this.props.pocusname} placeholder="SupplierName"/>
                                     </Form.Group>
 
@@ -110,12 +110,12 @@ export class EditPoModal extends Component{
                                         defaultValue={this.props.postate} placeholder="stateAddress"/>
                                     </Form.Group>
 
-                                    <Form.Group controlId="valuePrice">
+                                    <Form.Group controlId="Qty">
                                         <Form.Label>
-                                            Price
+                                            Quantity
                                         </Form.Label>
-                                        <Form.Control type="text" name="valuePrice" required 
-                                        defaultValue={this.props.poprice} placeholder="valuePrice"/>
+                                        <Form.Control type="text" name="Qty" required 
+                                        defaultValue={this.props.poqty} placeholder="valuePrice"/>
                                     </Form.Group>
 
                                     <Form.Group>

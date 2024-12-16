@@ -1,0 +1,38 @@
+/* Login.css */
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height */
+    background-color: #f9f9f9; /* Light background color */
+   
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 300px; /* Fixed width for the form */
+    padding: 20px;
+    border: 1px solid #ccc; /* Border around the form */
+    border-radius: 8px; /* Rounded corners */
+    background-color: white; /* White background for the form */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: add shadow for depth */
+}
+
+input {
+    margin-bottom: 10px; /* Space between inputs */
+    padding: 10px;
+    border: 1px solid #ccc; /* Border for inputs */
+    border-radius: 4px; /* Rounded corners for inputs */
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between; /* Space between options */
+    margin-bottom: 10px; /* Space below options */
+}
+
+.register-link {
+    margin-top: 10px; /* Space above the register link */
+}

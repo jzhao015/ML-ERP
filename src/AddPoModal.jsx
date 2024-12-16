@@ -16,13 +16,15 @@ export class AddPoModal extends Component{
                 'Content-Type':'application/json'
             },
             body: JSON.stringify({
+                OrderId: event.target.OrderId.value,
                 DateofEntry: event.target.DateofEntry.value,
-                CustomerId: parseInt(event.target.CustomerId.value, 10), 
-                CustomerName: event.target.CustomerName.value,
+                SupplierId: parseInt(event.target.SupplierId.value, 10), 
+                SupplierName: event.target.SupplierName.value,
                 ProductName: event.target.ProductName.value, 
                 cityAddress: event.target.cityAddress.value, 
                 stateAddress: event.target.stateAddress.value, 
-                valuePrice: event.target.valuePrice.value
+                CostPerUnit: event.target.CostPerUnit.value,
+                Qty: event.target.Qty.value
             })
         }).then(res=>res.json())
         .then((result)=>{
@@ -51,6 +53,13 @@ export class AddPoModal extends Component{
                         <Row>
                             <Col sm={6}>
                                 <Form onSubmit={this.handleSubmit}>
+
+                                <Form.Group controlId="OrderId">
+                                        <Form.Label>
+                                         OrderId 
+                                        </Form.Label>
+                                        <Form.Control type="text" name="OrderId" required placeholder="OrderId"/>
+                                    </Form.Group>
                                     <Form.Group controlId="DateofEntry">
                                         <Form.Label>Date of Entry</Form.Label>
                                         <Form.Control
@@ -60,18 +69,19 @@ export class AddPoModal extends Component{
                                     placeholder="DateofEntry"/>
                                     </Form.Group>
 
-                                    <Form.Group controlId="CustomerId">
+
+                                    <Form.Group controlId="SupplierId">
                                         <Form.Label>
                                             Supplier Id 
                                         </Form.Label>
-                                        <Form.Control type="text" name="CustomerId" required placeholder="SupplierId"/>
+                                        <Form.Control type="text" name="SupplierId" required placeholder="SupplierId"/>
                                     </Form.Group>
 
-                                    <Form.Group controlId="CustomerName">
+                                    <Form.Group controlId="SupplierName">
                                         <Form.Label>
                                             Supplier Name
                                         </Form.Label>
-                                        <Form.Control type="text" name="CustomerName" required placeholder="SupplierName"/>
+                                        <Form.Control type="text" name="SupplierName" required placeholder="SupplierName"/>
                                     </Form.Group>
 
                                     <Form.Group controlId="ProductName">
@@ -95,11 +105,18 @@ export class AddPoModal extends Component{
                                         <Form.Control type="text" name="stateAddress" required placeholder="stateAddress"/>
                                     </Form.Group>
 
-                                    <Form.Group controlId="valuePrice">
+                                    <Form.Group controlId="CostPerUnit">
                                         <Form.Label>
-                                            Price
+                                        CostPerUnit
                                         </Form.Label>
-                                        <Form.Control type="text" name="valuePrice" required placeholder="valuePrice"/>
+                                        <Form.Control type="text" name="CostPerUnit" required placeholder="CostPerUnit"/>
+                                    </Form.Group>
+
+                                    <Form.Group controlId="Qty">
+                                        <Form.Label>
+                                            Quantity
+                                        </Form.Label>
+                                        <Form.Control type="text" name="Qty" required placeholder="qty"/>
                                     </Form.Group>
 
                                     <Form.Group>

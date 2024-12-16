@@ -73,11 +73,12 @@ export class Sidebar extends Component{
                         </NavLink>
                         
                     </li>
+                    {/* 
                     <li className='sidebar-list-item'>
                         <a href="">
                             <BsFillGearFill className='icon'/> Setting
                         </a>
-                    </li>
+                    </li> */}
                 </ul>
             </aside>
         )

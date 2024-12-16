@@ -1,13 +1,14 @@
 import React, {Component} from "react";
-import {Table} from 'react-bootstrap';
-import {Button,ButtonToolbar} from 'react-bootstrap';
+import {Button,ButtonToolbar, Pagination} from 'react-bootstrap';
 import { AddProdModal } from './AddProdModal';
 import { EditProdModal } from './EditProdModal';
+import Header from './Header';
 
 export class Product extends Component{
     constructor(props){
         super(props);
-        this.state = {prods:[], addModalShow:false, editModalShow:false}
+        this.state = {prods:[], filteredProds: [], searchQuery: '', addModalShow:false, editModalShow:false, currentPage:1, itemsPerPage:6}
+        this.handleSearch = this.handleSearch.bind(this);
     }
 
     refreshList(){ 
@@ -36,17 +37,47 @@ export class Product extends Component{
             })
         }
     }
-    
+
+    handleSearch(query) {
+        this.setState({ searchQuery: query });
+        const filtered = this.state.prods.filter(prod =>
+            prod.ProductName.toLowerCase().includes(query.toLowerCase())
+        );
+        this.setState({ filteredProds: filtered, currentPage: 1 });
+    }
+
     render()
     {
-        const {prods, prodid, prodname, prodcustomerid} = this.state;
+        const {prods, filteredProds, searchQuery, prodid, prodname, prodcustomerid, currentPage, itemsPerPage} = this.state;
         let addModalClose=()=>this.setState({addModalShow:false});
         let editModalClose=()=>this.setState({editModalShow:false});
+
+        const displayItems = searchQuery ? filteredProds : prods;
+
+        const indexOfLastItem = currentPage * itemsPerPage;
+        const indexOfFirstItem = indexOfLastItem - itemsPerPage;
+        const currentItems = displayItems.slice(indexOfFirstItem, indexOfLastItem);
+        const totalPages = Math.ceil(displayItems.length / itemsPerPage);
+
+        let paginationItems = [];
+        for (let number = 1; number <= totalPages; number++) {
+            paginationItems.push(
+                <Pagination.Item 
+                    key={number}
+                    active={number === currentPage}
+                    onClick={() => this.setState({ currentPage: number })}
+                >
+                    {number}
+                </Pagination.Item>
+            );
+        }
+
         return(
-            <div className="mt-4 ml-5 ">
+            <div className="text-nowrap">
+                <Header onSearch={this.handleSearch} OpenSidebar={this.props.OpenSidebar} />
     <div className=" ml-5">
-        <div className="ml-5">
-        <Table className="ml-5" striped bordered hover size="sm">
+        <div className="text-nowrap">
+        <table class="table w-auto">
             <thead>
                 <tr>
                     <th>ProductId</th>
@@ -56,7 +87,7 @@ export class Product extends Component{
                 </tr>
             </thead>
             <tbody>
-                {prods.map(prod => (
+                {currentItems.map(prod => (
                     <tr key={prod.ProductId}>
                         <td>{prod.ProductId}</td>
                         <td>{prod.ProductName}</td>
@@ -88,7 +119,21 @@ export class Product extends Component{
                     </tr>
                 ))}
             </tbody>
-        </Table>
+        </table>
+
+        <div className="d-flex justify-content-center mt-3">
+            <Pagination>
+                <Pagination.First onClick={() => this.setState({ currentPage: 1 })} />
+                <Pagination.Prev 
+                    onClick={() => this.setState({ currentPage: Math.max(1, currentPage - 1) })}
+                />
+                {paginationItems}
+                <Pagination.Next 
+                    onClick={() => this.setState({ currentPage: Math.min(totalPages, currentPage + 1) })}
+                />
+                <Pagination.Last onClick={() => this.setState({ currentPage: totalPages })} />
+            </Pagination>
+        </div>
 
         <ButtonToolbar>
             <Button variant="primary"

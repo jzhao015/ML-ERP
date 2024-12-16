@@ -6,54 +6,68 @@ import
  { BarChart, Bar, Cell, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, LineChart, Line } 
  from 'recharts';
 
+
 export class Home extends Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            totalValueSum:[],
+            YearlyTotal:[],
+            yearlyRevenue:[],
+            monthlySpending: [],
+            monthlySales: []
+        }
+    }
+
+    refreshList(){
+        fetch(`${import.meta.env.VITE_API}inventory/TotalValueSum`)
+          .then(response=> response.json())
+          .then(data =>{
+              this.setState({totalValueSum:data});
+          });
+
+          fetch(`${import.meta.env.VITE_API}purchaseorder/YearlyTotal`)
+          .then(response=> response.json())
+          .then(data =>{
+              this.setState({YearlyTotal:data});
+          });
+
+          fetch(`${import.meta.env.VITE_API}salesorder/yearlyRevenue`)
+          .then(response=> response.json())
+          .then(data =>{
+              this.setState({yearlyRevenue:data});
+          });
+
+          fetch(`${import.meta.env.VITE_API}purchaseorder/valuepermonth`)
+          .then(response => response.json())
+          .then(data => {
+              this.setState({ monthlySpending: data });
+          });
+
+          fetch(`${import.meta.env.VITE_API}salesorder/valpermonth`)
+          .then(response => response.json())
+          .then(data => {
+              this.setState({ monthlySales: data });
+          });
+    }
+
+    componentDidMount(){
+        this.refreshList();
+      }
+  
+    componentDidUpdate(){
+        this.refreshList();
+      }
    
     render()
     {
-        const data = [
-            {
-              name: 'Page A',
-              uv: 4000,
-              pv: 2400,
-              amt: 2400,
-            },
-            {
-              name: 'Page B',
-              uv: 3000,
-              pv: 1398,
-              amt: 2210,
-            },
-            {
-              name: 'Page C',
-              uv: 2000,
-              pv: 9800,
-              amt: 2290,
-            },
-            {
-              name: 'Page D',
-              uv: 2780,
-              pv: 3908,
-              amt: 2000,
-            },
-            {
-              name: 'Page E',
-              uv: 1890,
-              pv: 4800,
-              amt: 2181,
-            },
-            {
-              name: 'Page F',
-              uv: 2390,
-              pv: 3800,
-              amt: 2500,
-            },
-            {
-              name: 'Page G',
-              uv: 3490,
-              pv: 4300,
-              amt: 2100,
-            },
-          ];
+        const chartData = this.state.monthlySpending.map((item, index) => ({
+            name: item.YearMonth,
+            spending: item.YearlyTotal,
+            revenue: this.state.monthlySales[index]?.totalValue || 0,
+            amt: 2000
+        }));
+
         return(
             <main className='main-container'>
                 <div className='main-title'>
@@ -65,14 +79,14 @@ export class Home extends Component{
                         <h3>SPENDING</h3>
                         <BsFillArchiveFill className='card_icon'/>
                     </div>
-                    <h1>$300</h1>
+                    <h1>${this.state.YearlyTotal}</h1>
                 </div>
                 <div className='card'>
                     <div className='card-inner'>
                         <h3>REVENUE</h3>
                         <BsPeopleFill className='card_icon'/>
                     </div>
-                    <h1>$12</h1>
+                    <h1>${this.state.yearlyRevenue}</h1>
                 </div>
                 <div className='card'>
                     <div className='card-inner'>
@@ -86,7 +100,7 @@ export class Home extends Component{
                         <h3>INVENTORY</h3>
                         <BsFillArchiveFill className='card_icon'/>
                     </div>
-                    <h1>$42</h1>
+                    <h1>${this.state.totalValueSum}</h1>
                 </div>
             </div>
             <div className='charts'>
@@ -94,7 +108,7 @@ export class Home extends Component{
                     <BarChart
                     width={500}
                     height={300}
-                    data={data}
+                    data={chartData}
                     margin={{
                     top: 5,
                     right: 30,
@@ -107,8 +121,8 @@ export class Home extends Component{
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Bar dataKey="pv" fill="#8884d8" />
-                    <Bar dataKey="uv" fill="#82ca9d" />
+                    <Bar dataKey="spending" fill="#8884d8" />
+                    <Bar dataKey="revenue" fill="#82ca9d" />
                     </BarChart>
                 </ResponsiveContainer>
     
@@ -116,7 +130,7 @@ export class Home extends Component{
                     <LineChart
                     width={500}
                     height={300}
-                    data={data}
+                    data={chartData}
                     margin={{
                         top: 5,
                         right: 30,
@@ -129,8 +143,8 @@ export class Home extends Component{
                     <YAxis />
                     <Tooltip />
                     <Legend />
-                    <Line type="monotone" dataKey="pv" stroke="#8884d8" activeDot={{ r: 8 }} />
-                    <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
+                    <Line type="monotone" dataKey="spending" stroke="#8884d8" activeDot={{ r: 8 }} />
+                    <Line type="monotone" dataKey="revenue" stroke="#82ca9d" />
                     </LineChart>
                 </ResponsiveContainer>
             </div>

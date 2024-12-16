@@ -9,34 +9,50 @@ import Purchaseorder from './Purchaseorder'
 import Salesorder from './Salesorder'
 import Report from './Report'
 import Inventory from './Inventory'
-
-import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import Login from './Login'
+import { BrowserRouter, Route, Routes, useLocation } from 'react-router-dom'
 
 function App() {
   const [openSidebarToggle, setOpenSidebarToggle] = useState(false)
+  const location = useLocation();
 
   const OpenSidebar = () => {
     setOpenSidebarToggle(!openSidebarToggle)
   }
+
+  const isLoginPage = location.pathname === '/login';
   return (
-    <BrowserRouter> 
-      <div className='grid-container'>
-      <Header OpenSidebar={OpenSidebar}/>
-      <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar}/>
-      <Routes>
-          <Route path='/' element={<Home />} exact />
-          <Route path='/product' element={<Product />} />
-          <Route path='/customer' element={<Customer />} />
-          <Route path='/purchaseorder' element={<Purchaseorder />} />
-          <Route path='/salesorder' element={<Salesorder />} />
-          <Route path='/report' element={<Report />} />
-          <Route path='/inventory' element={<Inventory />} />
-      </Routes>
-      
-    </div>
-    </BrowserRouter>
-    
+    <>
+      {isLoginPage ? (
+        <div className="login-page d-flex justify-content-center align-items-center vh-100">
+          <Routes>
+            <Route path='/login' element={<Login />} />
+          </Routes>
+        </div>
+      ) : (
+        <div className='grid-container'>
+          <Sidebar openSidebarToggle={openSidebarToggle} OpenSidebar={OpenSidebar} />
+          <div className='main'>
+            <Routes>
+              <Route path='/' element={<Home />} exact />
+              <Route path='/product' element={<Product />} />
+              <Route path='/customer' element={<Customer />} />
+              <Route path='/purchaseorder' element={<Purchaseorder />} />
+              <Route path='/salesorder' element={<Salesorder />} />
+              <Route path='/report' element={<Report />} />
+              <Route path='/inventory' element={<Inventory />} />
+            </Routes>
+          </div>
+        </div>
+      )}
+    </>
   )
 }
 
-export default App
+export default function AppWrapper() {
+  return (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  )
+}

@@ -47,30 +47,39 @@ export class EditSoModal extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
+    const salesOrderId = event.target.SalesOrderId.value;
+    const customerId = event.target.CustomerId.value;
+    const customerName = event.target.CustomerName.value;
+    const orderDate = event.target.OrderDate.value;
+    const deliveryDate = event.target.DeliveryDate.value;
+
+    if (!salesOrderId || this.state.products.some(product => !product.ProductId)) {
+      alert("Sales Order ID and Product ID are required.");
+      return;
+    }
+
     fetch(`${import.meta.env.VITE_API}salesorder`, {
-        method: 'PUT',
-        headers:{
-            'Accept':'application/json',
-            'Content-Type':'application/json'
-        },
-        body: JSON.stringify({
-            SalesOrderId: event.target.SalesOrderId.value,
-            CustomerId: event.target.CustomerId.value,
-            CustomerName: event.target.CustomerName.value,
-            Products: this.state.products, 
-            OrderDate: event.target.OrderDate.value, 
-            DeliveryDate: event.target.DeliveryDate.value
-        })
-    }).then(res=>res.json())
-    .then((result)=>{
+      method: 'PUT',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        SalesOrderId: salesOrderId,
+        CustomerId: customerId,
+        CustomerName: customerName,
+        Products: this.state.products,
+        OrderDate: orderDate,
+        DeliveryDate: deliveryDate
+      })
+    }).then(res => res.json())
+      .then((result) => {
         console.log(result);  // Check what is being returned
         alert(JSON.stringify(result));  // Display the result as a JSON string
-    },
-    (error)=>{
-        alert("Error")
-    }
-)
-    
+      },
+      (error) => {
+        alert("Error");
+      });
   }
 
   render() {
