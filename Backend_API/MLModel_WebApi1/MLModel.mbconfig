@@ -1,0 +1,213 @@
+﻿{
+  "Scenario": "Forecasting",
+  "DataSource": {
+    "Type": "SQL",
+    "Version": 1,
+    "ColumnProperties": [
+      {
+        "ColumnName": "InventoryId",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "ProductId",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "ProductName",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "QtyInStock",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "LastUpdated",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "DateTime",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "CostPerUnit",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "StockStatus",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      },
+      {
+        "ColumnName": "TotalValue",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "Single",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 5
+      }
+    ],
+    "ConnectionString": "Data Source=CSUF-G0B0003;Initial Catalog=CustomerDB;Integrated Security=True;Trust Server Certificate=True",
+    "CommandString": "SELECT CAST([InventoryId] as REAL), CAST([ProductId] as REAL), CAST([ProductName] as NVARCHAR(MAX)), CAST([QtyInStock] as REAL), [LastUpdated], CAST([CostPerUnit] as REAL), CAST([StockStatus] as NVARCHAR(MAX)), CAST([TotalValue] as REAL) FROM [dbo].[Inventory]",
+    "DatabaseName": "CustomerDB",
+    "SelectedTableDbo": "dbo",
+    "TableName": "Inventory"
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 3,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 170.22706063528017,
+        "RuntimeInSeconds": 0.229,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 2,
+            "SeriesLength": 10,
+            "TrainSize": 25,
+            "Horizon": 10,
+            "OutputColumnName": "QtyInStock",
+            "InputColumnName": "QtyInStock",
+            "ConfidenceLowerBoundColumn": "QtyInStock_LB",
+            "ConfidenceUpperBoundColumn": "QtyInStock_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 170.22706063528017,
+        "RuntimeInSeconds": 0.027,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 2,
+            "SeriesLength": 984,
+            "TrainSize": 25,
+            "Horizon": 10,
+            "OutputColumnName": "QtyInStock",
+            "InputColumnName": "QtyInStock",
+            "ConfidenceLowerBoundColumn": "QtyInStock_LB",
+            "ConfidenceUpperBoundColumn": "QtyInStock_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 170.22706063528017,
+        "RuntimeInSeconds": 0.017,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 2,
+            "SeriesLength": 1397,
+            "TrainSize": 25,
+            "Horizon": 10,
+            "OutputColumnName": "QtyInStock",
+            "InputColumnName": "QtyInStock",
+            "ConfidenceLowerBoundColumn": "QtyInStock_LB",
+            "ConfidenceUpperBoundColumn": "QtyInStock_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 170.22706063528017,
+        "RuntimeInSeconds": 0.017,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 2,
+            "SeriesLength": 623,
+            "TrainSize": 25,
+            "Horizon": 10,
+            "OutputColumnName": "QtyInStock",
+            "InputColumnName": "QtyInStock",
+            "ConfidenceLowerBoundColumn": "QtyInStock_LB",
+            "ConfidenceUpperBoundColumn": "QtyInStock_UB"
+          }
+        }
+      },
+      {
+        "Version": 1,
+        "Type": "Trial",
+        "TrainerName": "ForecastBySsa",
+        "Score": 170.22706063528017,
+        "RuntimeInSeconds": 0.024,
+        "Parameter": {
+          "_SCHEMA_": "e0",
+          "e0": {
+            "WindowSize": 2,
+            "SeriesLength": 159,
+            "TrainSize": 25,
+            "Horizon": 10,
+            "OutputColumnName": "QtyInStock",
+            "InputColumnName": "QtyInStock",
+            "ConfidenceLowerBoundColumn": "QtyInStock_LB",
+            "ConfidenceUpperBoundColumn": "QtyInStock_UB"
+          }
+        }
+      }
+    ],
+    "Estimators": {
+      "e0": "ForecastBySsa"
+    },
+    "Schema": "e0",
+    "MetricName": "RMSE",
+    "ModelFilePath": "C:\\Users\\jiachen1203\\Desktop\\CoreProject\\WebApi\\WebApi\\MLModel.mlnet"
+  },
+  "Type": "TrainingConfig",
+  "Version": 5,
+  "TrainingOption": {
+    "Version": 3,
+    "OptimizeMetric": "RMSE",
+    "Subsampling": false,
+    "Type": "ForecastingTrainingOption",
+    "TrainingTime": 60,
+    "UseCrossValidation": false,
+    "Horizon": 10,
+    "TimeColumn": "LastUpdated",
+    "LabelColumn": "QtyInStock",
+    "UseDefaultIndex": false,
+    "ValidationOption": {
+      "Version": 0,
+      "Type": "CrossValidationValidationOption",
+      "NumberOfFolds": 5
+    }
+  }
+}

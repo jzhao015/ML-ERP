@@ -1,0 +1,197 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|c:\\users\\jiachen1203\\desktop\\coreproject - copy\\webapi\\webapi\\controllers\\purchaseordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\purchaseordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|c:\\users\\jiachen1203\\desktop\\coreproject - copy\\webapi\\webapi\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\inventorycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|c:\\users\\jiachen1203\\desktop\\coreproject - copy\\webapi\\webapi\\controllers\\salesordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\salesordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|c:\\users\\jiachen1203\\desktop\\coreproject - copy\\webapi\\webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|c:\\users\\jiachen1203\\desktop\\coreproject - copy\\webapi\\webapi\\mlmodel.training.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|solutionrelative:webapi\\mlmodel.training.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|c:\\users\\jiachen1203\\desktop\\coreproject - copy\\webapi\\webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|solutionrelative:webapi\\webapi.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|c:\\users\\jiachen1203\\desktop\\coreproject - copy\\webapi\\webapi\\models\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|solutionrelative:webapi\\models\\inventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|c:\\users\\jiachen1203\\desktop\\coreproject - copy\\webapi\\webapi\\models\\salesorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|solutionrelative:webapi\\models\\salesorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|c:\\users\\jiachen1203\\desktop\\coreproject - copy\\webapi\\webapi\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|solutionrelative:webapi\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|c:\\users\\jiachen1203\\desktop\\coreproject - copy\\webapi\\webapi\\models\\salesorderline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|solutionrelative:webapi\\models\\salesorderline.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|c:\\users\\jiachen1203\\desktop\\coreproject - copy\\webapi\\webapi\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{696C8909-F878-4EF7-B788-F5D0A6738986}|WebApi\\WebApi.csproj|solutionrelative:webapi\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "InventoryController.cs",
+              "DocumentMoniker": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Controllers\\InventoryController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\InventoryController.cs",
+              "ToolTip": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Controllers\\InventoryController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\InventoryController.cs",
+              "ViewState": "AgIAANAAAAAAAAAAAAA1wN4AAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T00:48:01.789Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "WebApi.csproj",
+              "DocumentMoniker": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\WebApi.csproj",
+              "RelativeDocumentMoniker": "WebApi\\WebApi.csproj",
+              "ToolTip": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\WebApi.csproj",
+              "RelativeToolTip": "WebApi\\WebApi.csproj",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABQAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-12-05T22:54:11.135Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Inventory.cs",
+              "DocumentMoniker": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Models\\Inventory.cs",
+              "RelativeDocumentMoniker": "WebApi\\Models\\Inventory.cs",
+              "ToolTip": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Models\\Inventory.cs",
+              "RelativeToolTip": "WebApi\\Models\\Inventory.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T18:33:12.196Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SalesOrderController.cs",
+              "DocumentMoniker": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Controllers\\SalesOrderController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\SalesOrderController.cs",
+              "ToolTip": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Controllers\\SalesOrderController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\SalesOrderController.cs",
+              "ViewState": "AgIAAEoBAAAAAAAAAAAiwA0BAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T06:19:32.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PurchaseOrderController.cs",
+              "DocumentMoniker": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Controllers\\PurchaseOrderController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\PurchaseOrderController.cs",
+              "ToolTip": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Controllers\\PurchaseOrderController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\PurchaseOrderController.cs",
+              "ViewState": "AgIAACEBAAAAAAAAAAAiwI8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T07:19:49.966Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Controllers\\UserController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-09T06:43:19.944Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "MLModel.training.cs",
+              "DocumentMoniker": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\MLModel.training.cs",
+              "RelativeDocumentMoniker": "WebApi\\MLModel.training.cs",
+              "ToolTip": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\MLModel.training.cs",
+              "RelativeToolTip": "WebApi\\MLModel.training.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAwBsAAABBAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-06T00:07:12.575Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "SalesOrder.cs",
+              "DocumentMoniker": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Models\\SalesOrder.cs",
+              "RelativeDocumentMoniker": "WebApi\\Models\\SalesOrder.cs",
+              "ToolTip": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Models\\SalesOrder.cs",
+              "RelativeToolTip": "WebApi\\Models\\SalesOrder.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T06:03:20.063Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "WebApi\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "WebApi\\Controllers\\CustomerController.cs",
+              "ViewState": "AgIAAEcAAAAAAAAAAAAqwBsAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-18T00:57:46.799Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "SalesOrderLine.cs",
+              "DocumentMoniker": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Models\\SalesOrderLine.cs",
+              "RelativeDocumentMoniker": "WebApi\\Models\\SalesOrderLine.cs",
+              "ToolTip": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Models\\SalesOrderLine.cs",
+              "RelativeToolTip": "WebApi\\Models\\SalesOrderLine.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-17T06:05:16.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "WebApi\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\jiachen1203\\Desktop\\CoreProject - Copy\\WebApi\\WebApi\\Models\\Product.cs",
+              "RelativeToolTip": "WebApi\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-15T04:15:27.317Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
